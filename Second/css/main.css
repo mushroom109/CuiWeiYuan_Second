@@ -1,0 +1,664 @@
+/* 一整个掘金的页面 */
+.juejin{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* 设置上方不变导航栏----------------------------- */
+.header{
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fff;
+}
+.header .content{
+    display: flex;
+    align-items: center;
+    width: 960px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: white;
+}
+/* 首页的items */
+.header .content .items{
+    display: flex;
+    margin-left: 22px;
+    height: 100%;
+}
+.header .content .items li a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 18px;
+    color: #71777C;
+}
+.header .content .items li:nth-of-type(1) a{
+    color: #0093FF;
+}
+.header .content .items li a:hover{
+    color: #0093FF;
+}
+/* offer */
+.header .content .offer{
+    padding: 0 18px;
+}
+/* 搜索栏 */
+.header .content .search{
+    display: flex;
+    width: 249.575px;
+    padding: 0 14.4px;
+    justify-content: flex-end;
+}
+.header .content .search input{
+    width: 120px;
+    padding: 7.2px 0 7.2px 12px;
+    background-color: #F9FAFB;
+    border: 1px solid #E5E6E7;
+    border-right: 0;
+    outline: none;
+}
+.header .content .search .mag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    border: 1px solid #E5E6E7;
+    border-left: 0;
+    color: #C8CCD5;
+    background-color: #F9FAFB;
+}
+/* 写文章 */
+.header .content .write{
+    display: flex;
+    align-items: center;
+    width: 79.6px;
+    height: 32px;
+    margin: 0 14px;
+}
+.header .content .write .article{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    padding: 0 10.8px;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color:  #007FFF;
+    font-size: 14px;
+}
+.header .content .write .article:hover{
+    background-color: #0371DF;
+}
+.header .content .write .arrowDown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 15px;
+    color: #fff;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid #1A8CFF;
+    background-color: #007FFF;
+
+}
+.header .content .write .arrowDown:hover{
+    background-color: #0371DF;
+}
+
+.header .content .write .arrowDown i{
+    display: block;
+    font-size: 10px;
+    transform: scale(.5);
+}
+/* 登录 */
+.header .content .login{
+    display: flex;
+    /* display: none; */
+    justify-content: center;
+    align-items: center;
+    width: 72.325px;
+    height: 32px;
+    border: 1px solid #007FFF;
+    border-radius: 2px;
+    color: #007FFF;
+}
+/* 登录过后的用户头像和消息 */
+.header .content .userLogin{
+    /* display: flex; */
+    position: relative;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    padding-left: 2px;
+}
+.header .content .userLogin .bell{
+    display: block;
+}
+.header .content .userLogin .bell i{
+    color: #71777C;
+    font-size: 23px;
+}
+.header .content .userLogin .bell i:hover{
+    color: #007FFF;
+}
+.header .content .userLogin .head{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #acadaf;
+}
+.header .content .userLogin .head img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/* 用户头像下拉框 */
+.header .content .userLogin .slip-out{
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 260;
+    top: 45px;
+    left: -75px;
+    width: 157.2px;
+    padding: 12px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background-color: white;
+}
+
+.header .content .userLogin .slip-out a{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    color: #71777C;
+}
+.header .content .userLogin .slip-out a:hover{
+    background-color: #F8F8F8;
+}
+.header .content .userLogin .slip-out a i{
+    color: #B2BAC2;
+}
+
+/* mainbox的样式-------------------------------------- */
+.mainbox{
+    width: 100%;
+    min-width: 960px;
+    height: 100%;
+    min-height: 750px;
+    background-color: #F4F5F5;
+}
+/* 设置大框上方的导航栏---- */
+.mainbox .nav{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 45.987px;
+    margin-top: 61px;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+.mainbox .nav .navContainer{
+    display: flex;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+/* 设置每一个项 */
+.mainbox .nav .navContainer li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+}
+.mainbox .nav .navContainer li:hover{
+    cursor: pointer;
+}
+.mainbox .nav .navContainer li .item{
+    color: #71777C;
+}
+.mainbox .nav .navContainer li:hover .item{
+    color: #007FFF;
+}
+.mainbox .nav .navContainer li:nth-of-type(1) .item{
+    color: #007FFF;
+}
+/* 处理下滑框 */
+.mainbox .nav .navContainer li .slip-out{
+    position: absolute;
+    top: 45.987px;
+    left: 0;
+    display: none;
+    width: 375px;
+    padding: 10px 10px;
+    background-color: white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    cursor: default;
+}
+.mainbox .nav .navContainer li .slip-out a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    padding: 0 10px;
+    height: 23px;
+    margin: 5px 7px;
+    border-radius: 10px;
+    background-color: #F4F5F5;
+    font-size: 14px;
+    color: #71777C;
+}
+.mainbox .nav .navContainer li .slip-out a:hover{
+    color: #007FFF;
+}
+
+/* 设置主体的大框----------------- */
+.mainbox .midbox{
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    /* height: 500px; */
+    margin: 120px auto;
+    background-color: #bfa;
+}
+/* 左边 */
+.mainbox .midbox .left{
+    width: 700px;
+    height: 500px;
+    background-color: white;
+}
+/* 左边上方的导航栏 */
+.mainbox .midbox .left .top-nav{
+    display: flex;
+    width: 100%;
+    padding: 15.6px 12px;
+    border-bottom: 1px solid #F4F4F4;
+}
+.mainbox .midbox .left .top-nav li{
+    padding: 0 14.4px;
+    font-size: 14px;
+}
+.mainbox .midbox .left .top-nav li a{
+    color: #909090;
+}
+.mainbox .midbox .left .top-nav li:nth-last-of-type(3) a{
+    color: #007FFF;
+}
+.mainbox .midbox .left .top-nav li a:hover{
+    color: #007FFF;
+}
+.mainbox .midbox .left .top-nav li:nth-last-of-type(2){
+    border-left: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+}
+/* 右边 */
+.mainbox .midbox .right{
+    width: 240.017px;
+}
+
+/* 设置右边的登录和广告 */
+.mainbox .midbox .right .register{
+    width: 240.017px;
+    height: 267.967px;
+    padding: 15.996px;
+    margin-bottom: 15.6px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .tit1{ 
+    width: 100%;
+    height: 17.6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e3135;
+}
+.mainbox .midbox .right .register .tit2{ 
+    width: 100%;
+    height: 17.6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #2e3135;
+}
+/* 输入账号密码 */
+.mainbox .midbox .right .register .input-account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36.4px;
+    border: 1px solid #D9D9D9;
+    background-color: #fbfbfb;
+    margin-bottom: 9.996px;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .input-account .plus86{
+    display: flex;
+    background-color: transparent;
+}
+.mainbox .midbox .right .register .input-account .plus86 div{
+    width: 42px;
+}
+.mainbox .midbox .right .register .input-account .plus86 a{
+    display: block;
+    padding: 0 5px;
+    font-family: 'SimSun';
+    font-size: 13px;
+    font-weight: bold;
+    color: #999999;
+    transform: rotateZ(90deg);
+}
+.mainbox .midbox .right .register .input-account input{
+    width: 126.488px;
+    height: 34.4px;
+    padding: 8.4px 7.2px;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+}
+/* 验证码 */
+.mainbox .midbox .right .register .password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36.4px;
+    padding: 8.4px 7.2px;
+    border: 1px solid #F4F4F4;
+    background-color: #fbfbfb;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .password input{
+    width: 100px;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .password a{
+    display: block;
+    width: 101.2px;
+    height: 100%;
+    padding: 0 8.4px;
+    color: #007FFF;
+    text-align: center;
+}
+/* 设置登录建 */
+.mainbox .midbox .right .register .register-im{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 34.4px;
+    padding: 8.4px 0;
+    margin-top: 10px;
+    background-color: #007FFF;
+    color: white;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .check1{
+    width: 100%;
+    margin-top: 20px;
+    color: #767676;
+}
+.mainbox .midbox .right .register .check2{
+    display: flex;
+    width: 100%;
+    color: #767676;
+}
+.mainbox .midbox .right .register .check2 a{
+    color: #007FFF;
+}
+
+/* 设置广告 */
+.mainbox .midbox .right .adver{
+    margin-bottom: 15.6px;   
+}
+.mainbox .midbox .right .adver .pic img{
+    width: 100%;
+    margin-bottom: -4px;
+}
+.mainbox .midbox .right .adver .QRcode{
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+}
+.mainbox .midbox .right .adver .QR{
+    margin-right: 16px;
+}
+.mainbox .midbox .right .adver .QR img{
+    width: 50px;
+}
+/* 设置内部的介绍 */
+.mainbox .midbox .right .adver .des .item1{
+    margin-top: 2px;
+    font-size: 14px;
+}
+.mainbox .midbox .right .adver .des .item2{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #86909C;
+}
+/* 设置登录的遮罩层----------------------------------- */
+.login-layer{
+    display: none;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+.login-layer .loginBox{
+    position: relative;
+    top: 50%;
+    left: 0;
+    width: 318px;
+    padding: 24px;
+    border-radius: 3px;
+    margin: 0 auto;
+    background-color: white;
+    transform: translateY(-50%);
+}
+/* 设置内部的样式 */
+.login-layer .loginBox .mid-pic{
+    display: block;
+    position: absolute;
+    top: -83px;
+    left: 50%;
+    width: 40%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+}
+/* 标题 */
+.login-layer .loginBox .title{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 23.2px;
+    margin-bottom: 24px;
+}
+.login-layer .loginBox .title .tit{
+    line-height: 100%;
+    font-size: 19px;
+    font-weight: bold;
+}
+.login-layer .loginBox .title .cross{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #ADADAD;
+}
+.login-layer .loginBox .title .cross:active{
+    color: black;
+}
+.login-layer .loginBox .title .cross i{
+    font-size: 22px;
+}
+/* 设置账号密码 */
+.login-layer .loginBox .input-account input{
+    width: 100%;
+    height: 37.6px;
+    padding: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 3px;
+    margin-bottom: 9px;
+    outline: none;
+    transition: all 0.3s;
+}
+.login-layer .loginBox .password input{
+    width: 100%;
+    height: 37.6px;
+    padding: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 3px;
+    margin-bottom: 11px;
+    outline: none;
+    transition: all 0.3s;
+}
+/* 登录 */
+.login-layer .loginBox .login-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 6px 15.6px 7px 15.6px;
+    margin-bottom: 12px;
+    background-color: #007FFF;
+    color: white;
+}
+/* 手机登录 忘记密码 */
+.login-layer .loginBox .phlog_forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.login-layer .loginBox .phlog_forget a{
+    color: #007FFF;
+}
+/* 同意政策 */
+.login-layer .loginBox .contract{
+    display: flex;
+    width: 100%;
+    height: 17.6px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #868686;
+}
+.login-layer .loginBox .contract a{
+    color: #007FFF;
+}
+/* 设置个人主页-------------------------------------------- */
+.user-page{
+    display: none;
+    position: absolute;
+    z-index: 250;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F4F5F5;
+}
+.user-page .container{
+    display: flex;
+    width: 960px;
+    height: 500px;
+    margin: 81.204px auto 0;
+    background-color: #bfa;
+}
+.user-page .container .main-area{
+    width: 708px;
+}
+/* 头部个人信息-------- */
+.user-page .container .main-area .top{
+    display: flex;
+    width: 100%;
+    height: 152.8px;
+    padding: 30px;
+    margin-bottom: 12px;
+    background-color: white;
+}
+/* 头像 */
+.user-page .container .main-area .top .userHead{
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    margin-right: 28.8px;
+    border-radius: 50%;
+    background-color: #C8CCD5;
+}
+.user-page .container .main-area .top .userHead img{
+    width: 100%;
+}
+/* 个人信息 */
+.user-page .container .main-area .top .userMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 387.2px;
+    height: 100%;
+    padding-bottom: 5px;
+    margin-right: 24px;
+}
+.user-page .container .main-area .top .userMessage .name{
+    font-size: 24px;
+    font-weight: bold;
+}
+.user-page .container .main-area .top .userMessage .item{
+    font-size: 14px;
+    color: #4a68ad;
+}
+/* 编辑信息 */
+.user-page .container .main-area .top .userChange{
+    width: 118px;
+    height: 100%;
+}
+.user-page .container .main-area .top .userChange .logo{
+    width: 100%;
+    height: 21.2px;
+    margin-bottom: 37.6px;
+}
+.user-page .container .main-area .top .userChange .change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #3780F7;
+    border-radius: 4px;
+    background-color: white;
+    color: #3780F7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
