@@ -1,0 +1,1721 @@
+/* 一整个掘金的页面 */
+html,body{
+    background-color: #F4F5F5;
+    height: 100%;
+    width: 100%;
+}
+
+.juejin{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 设置上方不变导航栏------------------------------------------------- */
+.header{
+    display: block;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fff;
+    transition: all linear 0.2s;
+}
+.header .content{
+    display: flex;
+    align-items: center;
+    width: 960px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: white;
+}
+/* 首页的items */
+.header .content .items{
+    display: flex;
+    margin-left: 22px;
+    height: 100%;
+}
+.header .content .items li a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 18px;
+    color: #71777C;
+}
+.header .content .items li:nth-of-type(1) a{
+    color: #0093FF;
+}
+.header .content .items li a:hover{
+    color: #0093FF !important;
+}
+/* offer */
+.header .content .offer{
+    padding: 0 18px;
+}
+/* 搜索栏 */
+.header .content .search{
+    display: flex;
+    width: 249.575px;
+    padding: 0 14.4px;
+    justify-content: flex-end;
+}
+.header .content .search input{
+    width: 120px;
+    padding: 7.2px 0 7.2px 12px;
+    background-color: #F9FAFB;
+    border: 1px solid #E5E6E7;
+    border-right: 0;
+    outline: none;
+}
+.header .content .search .mag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    border: 1px solid #E5E6E7;
+    border-left: 0;
+    color: #C8CCD5;
+    background-color: #F9FAFB;
+}
+/* 写文章 */
+.header .content .write{
+    display: flex;
+    align-items: center;
+    width: 79.6px;
+    height: 32px;
+    margin: 0 14px;
+}
+.header .content .write .article{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    padding: 0 10.8px;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color:  #007FFF;
+    font-size: 14px;
+}
+.header .content .write .article:hover{
+    background-color: #0371DF;
+}
+.header .content .write .arrowDown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 15px;
+    color: #fff;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid #1A8CFF;
+    background-color: #007FFF;
+
+}
+.header .content .write .arrowDown:hover{
+    background-color: #0371DF;
+}
+
+.header .content .write .arrowDown i{
+    display: block;
+    font-size: 10px;
+    transform: scale(.5);
+}
+/* 登录 */
+.header .content .login{
+    display: flex;
+    /* display: none; */
+    justify-content: center;
+    align-items: center;
+    width: 72.325px;
+    height: 32px;
+    border: 1px solid #007FFF;
+    border-radius: 2px;
+    color: #007FFF;
+}
+/* 登录过后的用户头像和消息 */
+.header .content .userLogin{
+    /* display: flex; */
+    position: relative;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    padding-left: 2px;
+}
+.header .content .userLogin .bell{
+    display: block;
+}
+.header .content .userLogin .bell i{
+    color: #71777C;
+    font-size: 23px;
+}
+.header .content .userLogin .bell i:hover{
+    color: #007FFF;
+}
+.header .content .userLogin .head{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.header .content .userLogin .head img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/* 用户头像下拉框 */
+.header .content .userLogin .slip-out{
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 260;
+    top: 45px;
+    left: -75px;
+    width: 157.2px;
+    padding: 12px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background-color: white;
+}
+
+.header .content .userLogin .slip-out a{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    color: #71777C;
+}
+.header .content .userLogin .slip-out a:hover{
+    background-color: #F8F8F8;
+}
+.header .content .userLogin .slip-out a i{
+    color: #B2BAC2;
+}
+
+
+
+
+
+
+/* mainbox的样式---------------------------------------------- */
+.mainbox{
+    width: 100%;
+    min-width: 960px;
+    height: 100%;
+    min-height: 750px;
+    background-color: #F4F5F5;
+}
+/* 设置大框上方的导航栏---- */
+.mainbox .nav{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 45.987px;
+    margin-top: 61px;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+    transition: all linear 0.2s;
+}
+.mainbox .nav .navContainer{
+    display: flex;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+/* 设置每一个项 */
+.mainbox .nav .navContainer li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+}
+.mainbox .nav .navContainer li:hover{
+    cursor: pointer;
+}
+.mainbox .nav .navContainer li .item{
+    color: #71777C;
+}
+.mainbox .nav .navContainer li:hover .item{
+    color: #007FFF;
+}
+.mainbox .nav .navContainer li:nth-of-type(1) .item{
+    color: #007FFF;
+}
+/* 处理下滑框 */
+.mainbox .nav .navContainer li .slip-out{
+    position: absolute;
+    top: 45.987px;
+    left: 0;
+    display: none;
+    width: 375px;
+    padding: 10px 10px;
+    background-color: white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    cursor: default;
+}
+.mainbox .nav .navContainer li .slip-out a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    padding: 0 10px;
+    height: 23px;
+    margin: 5px 7px;
+    border-radius: 10px;
+    background-color: #F4F5F5;
+    font-size: 14px;
+    color: #71777C;
+}
+.mainbox .nav .navContainer li .slip-out a:hover{
+    color: #007FFF;
+}
+
+
+/* 设置主体的大框---------------------------------------- */
+.mainbox .midbox{
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 120px auto;
+}
+/* 左边 */
+.mainbox .midbox .left{
+    width: 700px;
+}
+/* 左边上方的导航栏 */
+.mainbox .midbox .left .top-nav{
+    display: flex;
+    width: 100%;
+    padding: 15.6px 12px;
+    border-bottom: 1px solid #F4F4F4;
+    background-color: white;
+}
+.mainbox .midbox .left .top-nav li{
+    padding: 0 14.4px;
+    font-size: 14px;
+}
+.mainbox .midbox .left .top-nav li a{
+    color: #909090;
+}
+.mainbox .midbox .left .top-nav li:nth-last-of-type(3) a{
+    color: #007FFF;
+}
+.mainbox .midbox .left .top-nav li a:hover{
+    color: #007FFF;
+}
+.mainbox .midbox .left .top-nav li:nth-last-of-type(2){
+    border-left: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+}
+
+/* 单个文章页面的样式 */
+.mainbox .midbox .left .artList .items{
+    position: relative;
+    width: 100%;
+    height: 182.6px;
+    padding: 16px 28.8px;
+    margin-bottom: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+/* 作者 */
+.mainbox .midbox .left .artList .items .author{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 21.6px;
+    font-size: 15px;
+}
+/* 标题 */
+.mainbox .midbox .left .artList .items .title{
+    display: block;
+    width: 100%;
+    height: 24px;
+    margin: 14px 0 12px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 内容 */
+.mainbox .midbox .left .artList .items .ar-content{
+    line-height: 22px;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    word-wrap: break-word;
+    /* 两行后省略 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 按钮 */
+.mainbox .midbox .left .artList .items .button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+}
+.mainbox .midbox .left .artList .items .button .thumbUp,
+.mainbox .midbox .left .artList .items .button .comment
+{
+    position: relative;
+    z-index: 100;
+    margin-right: 32px;
+}
+.mainbox .midbox .left .artList .items .button .thumbUp:hover,
+.mainbox .midbox .left .artList .items .button .comment:hover{
+    color: #007FFF !important;
+}
+/* 点击层 */
+.mainbox .midbox .left .artList .items .click{
+    display: block;
+    position: absolute;
+    z-index: 80;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 右边 */
+.mainbox .midbox .right{
+    width: 240.017px;
+}
+
+/* 设置右边的登录和广告 */
+.mainbox .midbox .right .register{
+    width: 240.017px;
+    height: 267.967px;
+    padding: 15.996px;
+    margin-bottom: 15.6px;
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .tit1{ 
+    width: 100%;
+    height: 17.6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e3135;
+}
+.mainbox .midbox .right .register .tit2{ 
+    width: 100%;
+    height: 17.6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #2e3135;
+}
+/* 输入账号密码 */
+.mainbox .midbox .right .register .input-account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36.4px;
+    border: 1px solid #D9D9D9;
+    background-color: #fbfbfb;
+    margin-bottom: 9.996px;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .input-account .plus86{
+    display: flex;
+    background-color: transparent;
+}
+.mainbox .midbox .right .register .input-account .plus86 div{
+    width: 42px;
+}
+.mainbox .midbox .right .register .input-account .plus86 a{
+    display: block;
+    padding: 0 5px;
+    font-family: 'SimSun';
+    font-size: 13px;
+    font-weight: bold;
+    color: #999999;
+    transform: rotateZ(90deg);
+}
+.mainbox .midbox .right .register .input-account input{
+    width: 126.488px;
+    height: 34.4px;
+    padding: 8.4px 7.2px;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+}
+/* 验证码 */
+.mainbox .midbox .right .register .password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36.4px;
+    padding: 8.4px 7.2px;
+    border: 1px solid #F4F4F4;
+    background-color: #fbfbfb;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .password input{
+    width: 100px;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .password a{
+    display: block;
+    width: 101.2px;
+    height: 100%;
+    padding: 0 8.4px;
+    color: #007FFF;
+    text-align: center;
+}
+/* 设置登录建 */
+.mainbox .midbox .right .register .register-im{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 34.4px;
+    padding: 8.4px 0;
+    margin-top: 10px;
+    background-color: #007FFF;
+    color: white;
+    font-size: 14px;
+}
+.mainbox .midbox .right .register .check1{
+    width: 100%;
+    margin-top: 20px;
+    color: #767676;
+}
+.mainbox .midbox .right .register .check2{
+    display: flex;
+    width: 100%;
+    color: #767676;
+}
+.mainbox .midbox .right .register .check2 a{
+    color: #007FFF;
+}
+
+/* 设置广告 */
+.mainbox .midbox .right .adver{
+    margin-bottom: 15.6px;   
+}
+.mainbox .midbox .right .adver .pic img{
+    width: 100%;
+    margin-bottom: -4px;
+}
+.mainbox .midbox .right .adver .QRcode{
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+}
+.mainbox .midbox .right .adver .QR{
+    margin-right: 16px;
+}
+.mainbox .midbox .right .adver .QR img{
+    width: 50px;
+}
+/* 设置内部的介绍 */
+.mainbox .midbox .right .adver .des .item1{
+    margin-top: 2px;
+    font-size: 14px;
+}
+.mainbox .midbox .right .adver .des .item2{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #86909C;
+}
+
+
+
+/* 设置登录的遮罩层----------------------------------- */
+.login-layer{
+    display: none;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+.login-layer .loginBox{
+    position: relative;
+    top: 50%;
+    left: 0;
+    width: 318px;
+    padding: 24px;
+    border-radius: 3px;
+    margin: 0 auto;
+    background-color: white;
+    transform: translateY(-50%);
+}
+/* 设置内部的样式 */
+.login-layer .loginBox .mid-pic{
+    display: block;
+    position: absolute;
+    top: -83px;
+    left: 50%;
+    width: 40%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+}
+/* 标题 */
+.login-layer .loginBox .title{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 23.2px;
+    margin-bottom: 24px;
+}
+.login-layer .loginBox .title .tit{
+    line-height: 100%;
+    font-size: 19px;
+    font-weight: bold;
+}
+.login-layer .loginBox .title .cross{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #ADADAD;
+}
+.login-layer .loginBox .title .cross:active{
+    color: black;
+}
+.login-layer .loginBox .title .cross i{
+    font-size: 22px;
+}
+/* 设置账号密码 */
+.login-layer .loginBox .input-account input{
+    width: 100%;
+    height: 37.6px;
+    padding: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 3px;
+    margin-bottom: 9px;
+    outline: none;
+    transition: all 0.3s;
+}
+.login-layer .loginBox .password input{
+    width: 100%;
+    height: 37.6px;
+    padding: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 3px;
+    margin-bottom: 11px;
+    outline: none;
+    transition: all 0.3s;
+}
+/* 登录 */
+.login-layer .loginBox .login-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 6px 15.6px 7px 15.6px;
+    margin-bottom: 12px;
+    background-color: #007FFF;
+    color: white;
+}
+/* 手机登录 忘记密码 */
+.login-layer .loginBox .phlog_forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.login-layer .loginBox .phlog_forget a{
+    color: #007FFF;
+}
+/* 同意政策 */
+.login-layer .loginBox .contract{
+    display: flex;
+    width: 100%;
+    height: 17.6px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #868686;
+}
+.login-layer .loginBox .contract a{
+    color: #007FFF;
+}
+
+
+
+
+/* 设置个人主页------------------------------------------------- */
+.user-page{
+    display: none;
+    position: absolute;
+    z-index: 250;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F4F5F5;
+}
+.user-page .container{
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 81.204px auto 0;
+}
+.user-page .container .main-area{
+    width: 708px;
+}
+/* 头部个人信息-------- */
+.user-page .container .main-area .top{
+    display: flex;
+    width: 100%;
+    height: 152.8px;
+    padding: 30px;
+    margin-bottom: 12px;
+    background-color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+}
+/* 头像 */
+.user-page .container .main-area .top .userHead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    margin-right: 28.8px;
+    border-radius: 50%;
+}
+.user-page .container .main-area .top .userHead img{
+    width: 100%;
+}
+/* 个人信息 */
+.user-page .container .main-area .top .userMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 387.2px;
+    height: 100%;
+    padding-bottom: 5px;
+    margin-right: 24px;
+}
+.user-page .container .main-area .top .userMessage .name{
+    font-size: 24px;
+    font-weight: bold;
+}
+.user-page .container .main-area .top .userMessage .item{
+    font-size: 14px;
+    color: #4a68ad;
+}
+/* 编辑信息 */
+.user-page .container .main-area .top .userChange{
+    width: 118px;
+    height: 100%;
+}
+.user-page .container .main-area .top .userChange .logo{
+    width: 100%;
+    height: 21.2px;
+    margin-bottom: 37.6px;
+}
+.user-page .container .main-area .top .userChange .change{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #3780F7;
+    border-radius: 4px;
+    background-color: white;
+    color: #3780F7;
+}
+.user-page .container .main-area .top .userChange .subscribe{
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #92c452;
+    border-radius: 4px;
+    background-color: white;
+    color: #92c452;
+}
+/* 下方的内容：文章、关注。。 */
+.user-page .container .main-area .down{
+    width: 100%;
+}
+.user-page .container .main-area .down .userItems{
+    display: flex;
+    width: 100%;
+    height: 51px;
+    border-bottom: 1px solid #EBEBEB;
+    background-color: white;
+}
+.user-page .container .main-area .down .userItems a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 100%;
+    font-size: 17px;
+    color: #31445B;
+}
+.user-page .container .main-area .down .userItems a:hover{
+    color: #686b6e;
+}
+.user-page .container .main-area .down .userItems a span{
+    color: #aeb1b3;
+}
+.user-page .container .main-area .down .userItems a i{
+    font-size: 10px;
+    color: #B2BAC2;
+}
+.user-page .container .main-area .down .userItems .slip-out{
+    position: relative;
+    z-index: 250;
+    top: 47px;
+    left: -100px;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    padding: 7.2px 0;
+    border: 1px solid #f3f3f4;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 5%);
+    cursor: pointer;
+}
+
+/* 默认文章 */
+.user-page .container .main-area .down .userItems a{
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+
+}
+.user-page .container .main-area .down .userItems a:nth-of-type(1){
+    color: #007FFF;
+    border-bottom: 3px solid;
+}
+/* 设置每一个选项对应的内容：文章、赞、更多 */
+.user-page .container .main-area .down .content li{
+    display: none;
+}   
+.user-page .container .main-area .down .content li:nth-of-type(1){
+    display: block;
+} 
+/* 标题 */
+.user-page .container .main-area .down .content .tit{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 52px;
+    border-bottom: 2px solid #F2F2F3;
+    background-color: white;
+}
+.user-page .container .main-area .down .content .tit .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 28.8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.user-page .container .main-area .down .content .tit .items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15.8px;
+}
+.user-page .container .main-area .down .content .tit .items a{
+    display: block;
+    padding: 0 13px;
+    border-right: 2px solid #D9DDE1;
+    font-size: 14px;
+    color: #72777B;
+}
+.user-page .container .main-area .down .content .tit .items a:hover{
+    color: #8E9295;
+}
+.user-page .container .main-area .down .content .tit .items a:last-of-type{
+    border-right: 0;
+}
+
+
+
+/* 单个文章页面的样式 */
+.user-page .container .main-area .down .innerContent{
+    width: 100%;
+    margin-bottom: 50px;
+}
+/* 设置空白 */
+.user-page .container .main-area .down .innerContent .emptyBox{
+    text-align: center;
+    width: 100%;
+    padding: 48px 0;
+    color: #adafb3;
+    font-size: 15px;
+    background-color: white;
+}
+.user-page .container .main-area .down .innerContent .emptyBox .iconfont{
+    display: block;
+    transform: scale(5);
+    margin: 35px;
+    color: #dbdada;
+}
+
+/* 文章 */
+.user-page .container .main-area .down .innerContent .items{
+    width: 100%;
+    height: 182.6px;
+    padding: 16px 28.8px;
+    margin-bottom: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+/* 作者 */
+.user-page .container .main-area .down .innerContent .items .author{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 21.6px;
+    font-size: 15px;
+}
+/* 标题 */
+.user-page .container .main-area .down .innerContent .items .title{
+    display: block;
+    align-items: center;
+    width: 100%;
+    height: 24px;
+    margin: 14px 0 12px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 内容 */
+.user-page .container .main-area .down .innerContent .items .ar-content{
+    line-height: 22px;
+    width: 100%;
+    height: 44px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    word-wrap: break-word;
+    /* 两行后省略 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 按钮 */
+.user-page .container .main-area .down .innerContent .items .button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+}
+.user-page .container .main-area .down .innerContent .items .button .thumbUp,
+.user-page .container .main-area .down .innerContent .items .button .thumbDown,
+.user-page .container .main-area .down .innerContent .items .button .comment
+{
+    margin-right: 32px;
+}
+
+
+/* 设置...省略号 */
+.user-page .container .main-area .down .innerContent .items .more{
+    position: relative;
+}
+.user-page .container .main-area .down .innerContent .items .more .ell{
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    margin: 5px 0;
+}
+.user-page .container .main-area .down .innerContent .items .more:hover .ell{
+    background-color: #e2e1e1;
+}
+/* ...的下拉框 */
+.user-page .container .main-area .down .innerContent .items .more .slip-out{
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: -15px;
+    width: 52px;
+    padding: 4px 0;
+    background-color: white;
+    border: 1px solid #e5e6eb;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+}
+.user-page .container .main-area .down .innerContent .items .more .slip-out a{
+    display: block;
+    width: 100%;
+    padding: 0 11px;
+    color: #4e5969;
+    font-size: 14px;
+    line-height: 36px;
+}
+
+/* 每一个用户 */
+.user-page .container .main-area .down .more .innerContent .subYouBox
+{
+    display: none;
+}
+.user-page .container .main-area .down .more .innerContent .userBox{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 96px;
+    padding: 20px 28.8px;
+    margin-bottom: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+.user-page .container .main-area .down .more .innerContent .userBox .userAvater{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+.user-page .container .main-area .down .more .innerContent .userBox .userAvater img{
+    width: 100%;
+}
+.user-page .container .main-area .down .more .innerContent .userBox .userName{
+    flex: 1;
+    align-self: flex-start;
+    padding: 5px 0;
+    font-weight: 600;
+}
+.user-page .container .main-area .down .more .innerContent .userBox .subscribeBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 30px;
+    border: 1px solid #92c452;
+    border-radius: 2px;
+    background-color: #92c452;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.user-page .container .main-area .down .more .innerContent .userBox .subscribeBtn:hover{
+    background-color: #a1d162 !important;
+    color: white !important;
+}
+
+/* 右边的大框---------- */
+.user-page .container .deside-area{
+    width: 240px;
+}
+/* 上框 */
+.user-page .container .deside-area .upon{
+    display: flex;
+    width: 100%;
+    height: 74.8px;
+    margin-bottom: 12px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+}   
+.user-page .container .deside-area .upon a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 16px 0;
+}
+.user-page .container .deside-area .upon a li{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.user-page .container .deside-area .upon a li:nth-of-type(1){
+    margin-bottom: 6px;
+}   
+.user-page .container .deside-area .upon a li:nth-of-type(2){
+    font-weight: 600;
+}
+
+
+
+
+
+
+/* 设置个人资料的修改----------------------------------------------------------- */
+.change-userPage {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+}
+/* 顶上的导航栏 */
+.change-userPage .top-nav{
+    position: fixed;
+    z-index: 250;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    margin-top: 61px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}
+.change-userPage .top-nav .nav-box{
+    display: flex;
+    width: 960px;
+    height: 100%;
+}
+.change-userPage .top-nav .nav-box a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 13px;
+    padding: 0 18px;
+    color: #71777C;
+}
+.change-userPage .top-nav .nav-box a:hover{
+    color: #007FFF;
+}
+.change-userPage .top-nav .nav-box a:nth-of-type(2){
+    color: #007FFF;
+}
+.change-userPage .top-nav .nav-box a span{
+    font-weight: bold;
+    font-family: "SimSun";
+}
+
+/* 内容 */
+.change-userPage .container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #F4F5F5;
+}
+.change-userPage .container .main-box{
+    width: 960px;
+    margin: 120px auto 20px;
+}
+.change-userPage .container .main-box .content-box{
+    width: 696px;
+    padding: 32.4px 48px 84px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+}
+/* 设置每一项 */
+.change-userPage .container .main-box .title{
+    width: 100%;
+    padding: 16.08px 0;
+    border-bottom: 1px solid #F1F1F1;
+    font-size: 22px;
+    font-weight: bold;
+}
+.change-userPage .container .main-box li{
+    display: flex;
+    width: 100%;
+    padding: 24px 0;
+    border-bottom: 1px solid #F1F1F1;
+}
+.change-userPage .container .main-box li .tit{
+    width: 120px;
+}
+.change-userPage .container .main-box li input{
+    flex: 1;
+    height: 20px;
+    padding: 1px 2px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+}
+.change-userPage .container .main-box li input::-webkit-input-placeholder{
+    color: rgb(194, 189, 189);
+}
+.change-userPage .container .main-box li .change{
+    color: #007FFF;
+    font-size: 15px;
+}
+/* 设置修改或取消修改数据 */
+.change-userPage .main-box li .change .save{
+    color: #007FFF;
+    font-size: 15px;
+    margin-right: 25px;
+}
+/* 设置头像修改 */
+.change-userPage .container .main-box .head .pic{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin-right: 24px;
+}
+.change-userPage .container .main-box .head .pic img{
+    width: 70px;
+}
+.change-userPage .container .main-box .head .item{
+    height: 100%;
+}
+.change-userPage .container .main-box .head .item .support{
+    font-size: 12px;
+    margin-bottom: 18px;
+    color: #909090;
+}
+.change-userPage .container .main-box .head .item .change{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 79.2px;
+    height: 27.2px;
+    padding: 6px 15.6px 7px;
+    border-radius: 2px;
+    background-color: #007FFF;
+    color: white;
+    font-size: 12px;
+}
+.change-userPage .container .main-box .head .item .change input{
+    display: none;
+}
+
+
+
+
+/* 写文章的页面--------------------------------------------------------------------- */
+.write-article{
+    display: none;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+/* 标题 */
+.write-article .title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 63px;
+    padding: 0 27px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+/* 输入 */
+.write-article .title .input{
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: none;
+    font-size: 24px;
+}
+/* 发布 */
+.write-article .title .post{
+    display: flex;
+    align-items: center;
+    height: 32px;
+    margin: 0 8px;
+    padding: 2px 16px;
+    border-radius: 2px;
+    background-color: #007FFF;
+    font-size: 14px;
+    color: white;
+}
+.write-article .title .post:hover{
+    background-color: #0d79e6;
+}
+/* 用户 */
+.write-article .title .user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 32px;
+    width: 32px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    cursor: pointer;
+}
+.write-article .title .user img{
+    width: 100%;
+    background-color: white;
+}
+
+/* 用户下拉框 */
+.write-article .title .user .slip-out{
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 260;
+    top: 45px;
+    left: -115px;
+    width: 157.2px;
+    padding: 12px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background-color: white;
+}
+
+.write-article .title .user .slip-out a{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    color: #71777C;
+}
+.write-article .title .user .slip-out a:hover{
+    background-color: #F8F8F8;
+}
+.write-article .title .user .slip-out a i{
+    color: #B2BAC2;
+}
+
+
+/* 工具------------ */
+.write-article .tool{
+    width: 100%;
+    height: 32px;
+    padding: 4px 12px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* 文章内容 */
+.write-article .content{
+    width: 100%;
+    height: calc(100% - 97px);
+    /* background-color: khaki; */
+    background-color: white;
+}
+.write-article .content .article{
+    width: 100%;
+    height: 100%;
+    padding: 16px 20px;
+    cursor: text;
+}
+.write-article .content .article .ar-content{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    font-size: 22px;
+    resize: none;
+}
+
+
+
+
+/* 设置文章的显示页面-------------------------------------------------------------------- */
+.show-article{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 82px;
+}
+.show-article .container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+/* 设置固定位置内容 */
+.show-article .container .fixed-area{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    margin-left: -530px;
+    margin-top: -100px;
+}
+.show-article .container .fixed-area a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 4%);
+    background-color: white;
+    margin-bottom: 9px;
+    color: rgba(0, 0, 0, .3);
+}
+.show-article .container .fixed-area a i{
+    font-size: 17px;
+}
+.show-article .container .fixed-area a:hover{
+    color: rgba(0, 0, 0, .4);
+}
+
+/* 设置主体内容 */
+.show-article .container .main-area{
+    width: 700px;
+    padding: 0 24px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 2%);
+}
+/* 设置文章部分 */
+.show-article .container .main-area .artBox .user{
+    display: flex;
+    width: 100%;
+    height: 43px;
+    margin: 24px 0;
+    cursor: pointer;
+}
+.show-article .container .main-area .artBox .user .userHead{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-color:white;
+}
+.show-article .container .main-area .artBox .user .userHead img{
+    width: 40px;
+}
+.show-article .container .main-area .artBox .user .userName{
+    font-weight: bold;
+}
+.show-article .container .main-area .artBox .tit{ 
+    display: block;
+    align-items: center;
+    width: 100%;
+    height: 44.8px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.show-article .container .main-area .artBox .content{
+    width: 100%;
+    padding: 22px 0;
+    margin-bottom: 36px;
+    word-wrap: break-word;
+}
+
+/* 设置评论部分 */
+.show-article .container .main-area .comBox{
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid #EBEBEB;
+}
+/* 输入评论 */
+.show-article .main-area .comBox .inputCom{
+    padding: 12px 16px;
+    margin: 0 20px 16px 20px;
+    background-color: #fafafa;
+} 
+.show-article .main-area .comBox .inputCom .box{
+    display: flex;
+}
+.show-article .main-area .comBox .inputCom .pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.show-article .main-area .comBox .inputCom .pic img{
+    width: 32px;
+}
+.show-article .main-area .comBox .inputCom .input{
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    outline: none;
+    font-size: 14px;
+}
+.show-article .main-area .comBox .inputCom .input::-webkit-input-placeholder{
+    color: #b5b6b8;
+}
+/* 输入的下拉框 */
+.show-article .main-area .comBox .inputCom .slip-out{
+    position: relative;
+    /* display: flex; */
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    margin-top: 7.8px;
+}
+/* 表情 */
+.show-article .main-area .comBox .inputCom .slip-out .sendEmoji{
+    margin-left: 50px;
+    color: #007FFF;
+    font-size: 14px;
+}
+.show-article .main-area .comBox .inputCom .slip-out .emojiSlipOut{
+    display: none;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    left: 50px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 5px 18px 0 rgb(0 0 0 / 16%);
+}
+.show-article .main-area .comBox .inputCom .slip-out .emojiSlipOut img{
+    margin: 3px;
+    cursor: pointer;
+    width: 20px;
+}
+.show-article .main-area .comBox .inputCom .slip-out .emojiSlipOut img:hover{
+    transform: scale(1.3);
+}
+/* 上传 */
+.show-article .main-area .comBox .inputCom .slip-out .upload{
+    display: block;
+    padding: 6px 15.6px;
+    border-radius: 2px;
+    background-color: #007FFF;
+    color: white;
+    font-size: 16px;
+}
+/* 评论显示--- */
+.show-article .main-area .comBox .showAllCom{
+    margin: 0 20px 0 78px;
+    background-color: white;
+}
+/* 回复的下拉框 */
+.show-article .main-area .comBox .showAllCom li .comSlipOut{
+    display: none;
+    width: 100%;
+    padding: 12px;
+    margin-top: 13px;
+}
+.show-article .main-area .comBox .showAllCom li .comSlipOut .replyInput{
+    width: 100%;
+    height: 36px;
+    padding: 7.2px 12px;
+    border: 1px solid #007FFF;
+    border-radius: 3px;
+    outline: none;
+}
+.show-article .main-area .comBox .showAllCom li .comSlipOut .replyInput::-webkit-input-placeholder{
+    color: #b5b6b8;
+}
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom{
+    position: relative;
+    margin-top: 7.8px;
+    display: flex;
+    justify-content: space-between;
+}
+/* 表情 */
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom .sendEmoji{ 
+    color: #007FFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom .emojiSlipOut{
+    display: none;
+    position: absolute;
+    z-index: 200;
+    top: 30px;
+    left: 0;
+    padding: 12px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 5px 18px 0 rgb(0 0 0 / 16%);
+}
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom .emojiSlipOut img{
+    margin: 3px;
+    cursor: pointer;
+    width: 20px;
+}   
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom .emojiSlipOut img:hover{
+    transform: scale(1.3);
+}
+
+.show-article .main-area .comBox .showAllCom li .comSlipOut .postCom a{
+    display: block;
+    padding: 6px 15.6px 7px;
+    border-radius: 2px;
+    background-color: #007FFF;
+    color: white;
+    font-size: 16px;
+}
+
+
+.show-article .main-area .comBox .showAllCom li,
+.show-article .main-area .comBox .showAllCom li .response
+{
+    display: flex;
+    width: 100%;
+    padding: 12px 0 12px 12px;
+    margin: 12px 0;
+    font-size: 13px;
+}
+.show-article .main-area .comBox .showAllCom li .response{
+    background-color: #fafafa;
+}
+.show-article .main-area .comBox .showAllCom .comHead,
+.show-article .main-area .comBox .showAllCom .resHead
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.show-article .main-area .comBox .showAllCom .comHead img,
+.show-article .main-area .comBox .showAllCom .resHead img
+{
+    width: 32px;
+}
+.show-article .main-area .comBox .showAllCom .innerCom,
+.show-article .main-area .comBox .showAllCom .innerRes
+{
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 12px;
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comContent,
+.show-article .main-area .comBox .showAllCom .innerCom .resContent
+{
+    word-wrap: break-word;
+    margin-top: 6.6px;
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comContent img,
+.show-article .main-area .comBox .showAllCom .innerCom .resContent img{
+    width: 20px;
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comButtons,
+.show-article .main-area .comBox .showAllCom .innerRes .resButtons
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 7px;
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comButtons a,
+.show-article .main-area .comBox .showAllCom .innerRes .resButtons a
+{
+    display: block;
+    margin-left: 35px;
+    font-size: 12px;
+    color: #9c9d9e;
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comButtons .dislike{
+    display: block;
+    transform: rotateX(180deg);
+}
+.show-article .main-area .comBox .showAllCom .innerCom .comButtons a:hover,
+.show-article .main-area .comBox .showAllCom .innerRes .resButtons a:hover
+{
+    color: #bebebe !important;
+}
+.show-article .main-area .comBox .showAllCom .lastBox{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #a9aaac;
+}
+
+/* 设置侧边用户的内容------- */
+.show-article .container .deside-area{
+    width: 240px;
+    background-color: transparent;
+}
+.show-article .container .deside-area .userBox{
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 2%);
+}
+.show-article .container .deside-area .userBox .userTit{
+    width: 100%;
+    padding: 12px 15.6px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+}
+.show-article .container .deside-area .userBox .userItem{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15.6px;
+}
+.show-article .container .deside-area .userBox .userItem .Head{
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.show-article .container .deside-area .userBox .userItem .Head img{
+    width: 50px;
+}
+.show-article .container .deside-area .userBox .thumbUp{
+    width: 100%;
+    padding: 0 15.6px;
+    padding-bottom: 15.6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

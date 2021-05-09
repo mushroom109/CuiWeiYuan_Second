@@ -1,0 +1,18 @@
+/* 去除浏览器的默认样式 */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+/* clearfix方式处理父元素塌陷和父子元素外边距重叠 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
