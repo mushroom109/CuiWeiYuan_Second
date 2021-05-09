@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掘金</title>
+</head>
+<!-- 引入图标字体 -->
+<link rel="stylesheet" href="./icon/css/all.css">
+<link rel="stylesheet" href="./icon/iconfont/iconfont.css">
+<!-- 引入CSS -->
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/main.css">
+<!-- 引入JS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/app.js" ></script>
+<body>
+    <div class="juejin">
+        <div class="header">
+            <div class="content">
+                <a href="javascript:;"><img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg"></a>
+                <ul class="items">
+                    <li id="MainPage"><a href="javascript:;">首页</a></li>
+                    <li><a href="javascript:;">沸点</a></li>
+                    <li><a href="javascript:;">小册</a></li>
+                    <li><a href="javascript:;">活动</a></li>
+
+                </ul>
+                <a href="javascript:;" class="offer"><img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/recruitment.8b39c6d.svg"></a>
+                <div class="search">
+                    <input type="text" placeholder="探索掘金" id="search">
+                    <a href="javascript:;" class="mag"><i class="iconfont">&#xe601;</i></a>
+                </div>
+                <div class="write">
+                    <a href="javascript:;" class="article">写文章</a>
+                    <a href="javascript:;" class="arrowDown"><i class="iconfont">&#xe6bd;</i></a>
+                </div>
+                <!-- 未登录状态 -->
+                <a href="javascript:;" class="login">登录</a>
+                <!-- 已登录状态 -->
+                <div class="userLogin">
+                    <a href="javascript:;" class="bell"><i class="iconfont">&#xe621;</i></a>
+                    <a href="javascript:;" class="head"><img src=""></a>
+                    <div class="slip-out">
+                        <a href="javascript:;"><i class="iconfont">&#xe60f;</i>&nbsp;&nbsp;写文章</a>
+                        <a href="javascript:;"><i class="iconfont">&#xe66a;</i>&nbsp;&nbsp;我的主页</a>
+                        <a href="javascript:;" id="logOut"><i class="iconfont">&#xe60d;</i>&nbsp;&nbsp;登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mainbox pageList">
+            <div class="nav">
+                <ul class="navContainer">
+                    <li><a href="javascript:;" class="item">推荐</a></li>
+                    <li>
+                        <a href="javascript:;" class="item">后端</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">Java</a>
+                            <a href="javascript:;">后端</a>
+                            <a href="javascript:;">Go</a>
+                            <a href="javascript:;">SpringBoot</a>
+                            <a href="javascript:;">Python</a>
+                            <a href="javascript:;">MySQL</a>
+                            <a href="javascript:;">Spring</a>
+                            <a href="javascript:;">Redis</a>
+                            <a href="javascript:;">JVM</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">数据库</a>
+                            <a href="javascript:;">Linux</a>
+                            <a href="javascript:;">架构</a>
+                            <a href="javascript:;">Spring Cloud</a>
+                            <a href="javascript:;">设计模式</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">前端</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">JavaScript</a>
+                            <a href="javascript:;">前端</a>
+                            <a href="javascript:;">Vue.js</a>
+                            <a href="javascript:;">React.js</a>
+                            <a href="javascript:;">CSS</a>
+                            <a href="javascript:;">Node.js</a>
+                            <a href="javascript:;">Webpack</a>
+                            <a href="javascript:;">面试</a>
+                            <a href="javascript:;">微信小程序</a>
+                            <a href="javascript:;">TypeScript</a>
+                            <a href="javascript:;">Flutter</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">前端框架</a>
+                            <a href="javascript:;">浏览器</a>
+                            <a href="javascript:;">ECMAScript 6</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">Android</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">Android</a>
+                            <a href="javascript:;">Flutter</a>
+                            <a href="javascript:;">Kotlin</a>
+                            <a href="javascript:;">Java</a>
+                            <a href="javascript:;">源码</a>
+                            <a href="javascript:;">Android Jetpack</a>
+                            <a href="javascript:;">gradle</a>
+                            <a href="javascript:;">面试</a>
+                            <a href="javascript:;">JVM</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">数据库</a>
+                            <a href="javascript:;">Linux</a>
+                            <a href="javascript:;">架构</a>
+                            <a href="javascript:;">Spring Cloud</a>
+                            <a href="javascript:;">设计模式</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">IOS</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">IOS</a>
+                            <a href="javascript:;">Swift</a>
+                            <a href="javascript:;">Objective-C</a>
+                            <a href="javascript:;">Flutter</a>
+                            <a href="javascript:;">OpenGL</a>
+                            <a href="javascript:;">SwiftUI</a>
+                            <a href="javascript:;">Apple</a>
+                            <a href="javascript:;">Xcode</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">RxSwift</a>
+                            <a href="javascript:;">逆向</a>
+                            <a href="javascript:;">面试</a>
+                            <a href="javascript:;">性能优化</a>
+                            <a href="javascript:;">CocoalPods</a>
+                            <a href="javascript:;">设计模式</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">人工智能</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">人工智能</a>
+                            <a href="javascript:;">机器学习</a>
+                            <a href="javascript:;">深度学习</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">Phython</a>
+                            <a href="javascript:;">NLP</a>
+                            <a href="javascript:;">TensorFlow</a>
+                            <a href="javascript:;">神经网络</a>
+                            <a href="javascript:;">计算机视觉</a>
+                            <a href="javascript:;">数据分析</a>
+                            <a href="javascript:;">掘金翻译计划</a>
+                            <a href="javascript:;">Github</a>
+                            <a href="javascript:;">Google</a>
+                            <a href="javascript:;">PyTorch</a>
+                            <a href="javascript:;">大数据</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">开发工具</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">Git</a>
+                            <a href="javascript:;">GitHub</a>
+                            <a href="javascript:;">Linux</a>
+                            <a href="javascript:;">Visual Studio Code</a>
+                            <a href="javascript:;">数据库</a>
+                            <a href="javascript:;">Python</a>
+                            <a href="javascript:;">Java</a>
+                            <a href="javascript:;">前端</a>
+                            <a href="javascript:;">intelliJ IDEA</a>
+                            <a href="javascript:;">程序员</a>
+                            <a href="javascript:;">开源</a>
+                            <a href="javascript:;">Docker</a>
+                            <a href="javascript:;">Chrome</a>
+                            <a href="javascript:;">Serverless</a>
+                            <a href="javascript:;">命令行</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">代码人生</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">程序员</a>
+                            <a href="javascript:;">Java</a>
+                            <a href="javascript:;">Python</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">前端</a>
+                            <a href="javascript:;">年终总结</a>
+                            <a href="javascript:;">代码规范</a>
+                            <a href="javascript:;">后端</a>
+                            <a href="javascript:;">LeetCode</a>
+                            <a href="javascript:;">Linux</a>
+                            <a href="javascript:;">测试</a>
+                            <a href="javascript:;">数据结构</a>
+                            <a href="javascript:;">面试</a>
+                            <a href="javascript:;">编程语言</a>
+                            <a href="javascript:;">架构</a>
+                        </div></li>
+                    <li>
+                        <a href="javascript:;" class="item">阅读</a>
+                        <div class="slip-out">
+                            <a href="javascript:;">Java</a>
+                            <a href="javascript:;">程序员</a>
+                            <a href="javascript:;">前端</a>
+                            <a href="javascript:;">JavaScript</a>
+                            <a href="javascript:;">运维</a>
+                            <a href="javascript:;">算法</a>
+                            <a href="javascript:;">Python</a>
+                            <a href="javascript:;">Linux</a>
+                            <a href="javascript:;">面试</a>
+                            <a href="javascript:;">Flutter</a>
+                            <a href="javascript:;">Android</a>
+                            <a href="javascript:;">Kubernetes</a>
+                            <a href="javascript:;">后端</a>
+                            <a href="javascript:;">数据库</a>
+                            <a href="javascript:;">开源</a>
+                        </div></li>
+                </ul>
+            </div>
+            <div class="midbox">
+                <div class="left">
+                    <ul class="top-nav">
+                        <li><a href="javascript:;">热门</a></li>
+                        <li><a href="javascript:;">最新</a></li>
+                        <li><a href="javascript:;">热榜</a></li>
+                    </ul>
+                    <ul class="artList">
+                        <!-- <li class="items">
+                            <div class="click"></div>
+                            <div class="author">cwy111</div>
+                            <div class="title">123123</div>
+                            <div class="ar-content">
+                                <div class="articleBox">
+                                    1231231324478999999
+                                </div>
+                            </div>
+                            <div class="button">
+                                <a href="javascript:;" class="thumbUp"><i class="iconfont">&#xe613;</i> <span>0</span></a>
+                                <a href="javascript:;" class="comment"><i class="iconfont">&#xe9b0;</i> <span>0</span></a>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="register">
+                        <div class="tit1">掘金 - juejin.cn</div>
+                        <div class="tit2">一个帮助开发者成长的社区</div>
+                        <div class="input-account">
+                            <div class="plus86"><div>+86</div><a href="javascript:;">></a></div>
+                            <input type="text" placeholder="请输入手机号">
+                        </div>
+                        <div class="password">
+                            <input type="text" placeholder="验证码">
+                            <a href="javascript:;">获取验证码</a>
+                        </div>
+                        <a href="javascript:;" class="register-im">立即登录</a>
+                        <div class="check1">注册登录表示</div>
+                        <div class="check2">
+                            <div>同意&nbsp;</div>
+                            <a href="javascript:;">用户协议、隐私政策</a>
+                        </div>
+                    </div>
+                    <div class="adver">
+                        <div href="javascript:;" class="pic"><img src="./img/mainbox/right/recruit.png"></div>
+                        <div class="QRcode">
+                            <div class="QR"><img src="./img/mainbox/right/Qr.png"></div>
+                            <div class="des">
+                                <div class="item1">下载掘金客户端</div>
+                                <div class="item2">解锁更多技术团队热招职位</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="login-layer pageList">
+            <div class="loginBox">
+                <img src="./img/login_layer/normal.0447fe9.png" class="mid-pic">
+                <div class="title">
+                    <div class="tit">账密登录</div>
+                    <a href="javascript:;" class="cross"><i class="iconfont">&#xe6c9;</i></a>
+                </div>
+                <div class="input-account">
+                    <input type="text" placeholder="邮箱/手机号(国际号码加区号)">
+                </div>
+                <div class="password">
+                    <input type="text" placeholder="请输入密码">
+                </div>
+                <a href="javascript:;" class="login-button">登录</a>
+                <div class="phlog_forget">  
+                    <a href="javascript:;" class="phlog">手机登录</a>
+                    <a href="javascript:;" class="forget">忘记密码</a>
+                </div>
+                <div class="contract">
+                    <div>注册登录即表示同意&nbsp;</div>
+                    <a href="javascript:;">用户协议、 隐私政策</a>
+                </div>
+            </div>
+        </div>
+        <div class="user-page pageList">
+            <div class="container">
+                <div class="main-area">
+                    <div class="top">
+                            <div class="userHead">
+                                <img src="">
+                            </div>
+                            <div class="userMessage">
+                                <div class="name"></div>
+                                <a href="javascript:;" class="item">+ 你从事什么职业</a>
+                                <a href="javascript:;" class="item">+ 你有哪些爱好</a>
+                            </div>
+                            <div class="userChange">
+                                <div class="logo"></div>
+                                <a href="javascript:;" class="change">编辑个人资料</a>
+                                <a href="javascript:;" class="subscribe">关注</a>
+                            </div>
+                    </div>
+                    <div class="down">
+                        <div class="userItems">
+                            <a href="javascript:;">文章</a>
+                            <a href="javascript:;" class="thumbUpArt">赞&nbsp;&nbsp;<span>0</span></a>
+                            <a href="javascript:;" class="moreBtn">更多&nbsp;<i class="iconfont">&#xe6bd;</i></a>
+                            <div class="slip-out">关注</div>
+                        </div>
+                        <ul class="content">
+                            <li class="article">
+                                <div class="tit">
+                                    <div class="left">文章</div>
+                                    <div class="items">
+                                        <a href="javascript:;">热门</a>
+                                        <a href="javascript:;">最新</a>
+                                    </div>
+                                </div>
+                                <div class="innerContent">
+                                    <!-- <div class="items">
+                                        <div class="author">cwy111</div>
+                                        <div class="title">123123</div>
+                                        <div class="ar-content">
+                                            <div class="articleBox">
+                                                1231231324478999999
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="javascript:;" class="thumbUp"><i class="iconfont">&#xe613;</i> 点赞</a>
+                                            <a href="javascript:;" class="thumbDown"><i class="iconfont">&#xe613;</i> 点踩</a>
+                                            <a href="javascript:;" class="comment"><i class="iconfont">&#xe9b0;</i> 评论</a>
+                                            <div class="more">
+                                                <a href="javascript:;" class="ell">...</a>
+                                                <div class="slip-out">
+                                                    <a href="javascript:;">编辑</a>
+                                                    <a href="javascript:;" class="delete">删除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </li>
+                            <li class="consent">
+                                <div class="tit">
+                                    <div class="left">赞</div>
+                                    <div class="items">
+                                        <a href="javascript:;">文章(<span>0</span>)</a>
+                                    </div>
+                                </div>
+                                <div class="innerContent">
+                                    <!-- <div class="items">
+                                        <div class="author">cwy111</div>
+                                        <div class="title">123123</div>
+                                        <div class="ar-content">
+                                            <div class="articleBox">
+                                                1231231324478999999
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="javascript:;" class="thumbUp"><i class="iconfont">&#xe613;</i> <span></span></a>
+                                            <a href="javascript:;" class="comment"><i class="iconfont">&#xe9b0;</i> <span></span></a>
+                                            <div class="more">
+                                                <a href="javascript:;" class="ell">...</a>
+                                                <div class="slip-out">
+                                                    <a href="javascript:;" class="delete">删除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </li>
+                            <li class="more">
+                                <div class="tit">
+                                    <div class="left">关注</div>
+                                    <div class="items">
+                                        <a href="javascript:;">关注的用户</a>
+                                        <a href="javascript:;">关注者</a>
+                                    </div>
+                                </div>
+                                <div class="innerContent">
+                                    <div class="youSubBox">
+
+                                    </div>
+                                    <div class="subYouBox">
+
+                                    </div>
+                                    <!-- <div class="userBox">
+                                        <div class="userAvater">
+                                            <img src="./img/login_layer/normal.0447fe9.png">
+                                        </div>
+                                        <div class="userName">我就是我</div>
+                                        <div class="subscribeBtn">已关注</div>
+                                    </div> -->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                <div class="deside-area">
+                    <div class="upon">
+                        <a href="javascript:;" class="focus">
+                            <li>关注了</li>
+                            <li class="focus-num">0</li>
+                        </a>
+                        <a href="javascript:;" class="focus-user">
+                            <li>关注者</li>
+                            <li class="focus-user-num">0</li>
+                        </a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="change-userPage pageList">
+            <div class="top-nav">
+                <div class="nav-box">
+                    <a href="javascript:;" class="back"><span><</span>&nbsp;返回个人主页</a>
+                    <a href="javascript:;" class="self">个人资料</a>
+                </div>
+            </div>
+            <div class="container clearfix">
+                <div class="main-box">
+                    <div class="content-box">
+                        <div class="title">个人资料</div>
+                        <li class="head">
+                            <div class="tit">头像</div>
+                            <div class="pic">
+                                <img src="">
+                            </div>
+                            <div class="item">
+                                <div class="support">支持 jpg、png、jpeg 格式大小 5M 以内的图片</div>
+                                <a href="javascript:;" class="change">
+                                    点击上传<input type="file" name="pic-file" accept="image/png,image/jpg,image/gif,image/JPEG"> 
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nickName">
+                            <div class="tit">用户名</div>
+                            <input type="text" placeholder="填写你的用户名" class="input-box">
+                            <a href="javascript:;" class="change"><i class="iconfont">&#xe614;</i>&nbsp;修改</a>
+                        </li>
+                        <li class="userIntroduction">
+                            <div class="tit">个人介绍</div>
+                            <input type="text" placeholder="填写职业技能、擅长的事情、喜欢的事情等" class="input-box">
+                            <a href="javascript:;" class="change"><i class="iconfont">&#xe614;</i>&nbsp;修改</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="write-article pageList">
+            <div class="title">
+                <input type="text" placeholder="输入文章标题..." class="input">
+                <a href="javascript:;" class="post">发布</a>
+                <div class="user">
+                    <img src="" class="user-pic">
+                    <div class="slip-out">
+                        <a href="javascript:;"><i class="iconfont">&#xe60f;</i>&nbsp;&nbsp;写文章</a>
+                        <a href="javascript:;"><i class="iconfont">&#xe66a;</i>&nbsp;&nbsp;我的主页</a>
+                        <a href="javascript:;" id="logOut"><i class="iconfont">&#xe60d;</i>&nbsp;&nbsp;登出</a>
+                    </div> 
+                </div>
+            </div>
+            <div class="tool">
+
+            </div>
+            <div class="content">
+                <div class="article">
+                    <textarea class="ar-content"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="show-article pageList">
+            <div class="container">
+                <div class="fixed-area">
+                    <a href="javascript:;" class="thumbUp"><i class="iconfont">&#xe60c;</i></a>
+                    <a href="javascript:;" class="dislike"><i class="iconfont">&#xe697;</i></a>
+                    <a href="javascript:;" class="comment"><i class="iconfont">&#xe684;</i></a>
+                </div>
+                <div class="main-area">
+                    <div class="artBox">
+                        <div class="user">
+                            <div class="userHead"><img src="" ></div>
+                            <div class="userName"></div>
+                        </div>
+                        <div class="tit"></div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="comBox">
+                        <div class="inputCom">
+                            <div class="box">
+                                <div class="pic"><img src=""></div>
+                                <input type="text" class="input" placeholder="输入评论...">
+                            </div>
+                            <div class="slip-out">
+                                <a href="javascript:;" class="sendEmoji"><i class="iconfont">&#xe66e;</i> 表情</a>
+                                <div class="emojiSlipOut"><img src="./img/emoji/1.jpg"><img src="./img/emoji/2.jpg"><img src="./img/emoji/3.jpg"><img src="./img/emoji/4.jpg"><img src="./img/emoji/5.jpg"><br><img src="./img/emoji/6.jpg"><img src="./img/emoji/7.jpg"><img src="./img/emoji/8.jpg"><img src="./img/emoji/9.jpg"><img src="./img/emoji/10.jpg"><br><img src="./img/emoji/11.jpg"><img src="./img/emoji/12.jpg"><img src="./img/emoji/13.jpg"><img src="./img/emoji/14.jpg"><img src="./img/emoji/15.jpg"><br><img src="./img/emoji/16.jpg"><img src="./img/emoji/17.jpg"><img src="./img/emoji/18.jpg"><img src="./img/emoji/19.jpg"><img src="./img/emoji/20.jpg"></div>
+                                <a href="javascript:;" class="upload">评论</a>
+                            </div>
+                        </div>
+                        <div class="showAllCom">
+                            <li class="comments">
+                                <div class="comHead"><img src="./img/mainbox/right/Qr.png"></div>
+                                <div class="innerCom">
+                                    <a href="javascript:;" class="comAuthor">作者</a>
+                                    <div class="comContent">内容</div>
+                                    <div class="comButtons">
+                                        <a href="javascript:;" class="deleteCom">删除</a>
+                                        <a href="javascript:;"><i class="iconfont thumUpCom">&#xe613;</i></a>
+                                        <a href="javascript:;"><i class="iconfont dislike">&#xe613;</i></a>
+                                        <a href="javascript:;"><i class="iconfont reply">&#xe9b0;</i> 回复</a>       
+                                    </div>
+                                    <div class="comSlipOut">
+                                        <input type="text" class="replyInput" placeholder="输入回复...">
+                                        <div class="postCom">
+                                            <a href="javascript:;">评论</a>
+                                        </div>
+                                    </div>
+                                    <div class="response">
+                                        <div class="resHead"><img src="./img/mainbox/right/Qr.png"></div>
+                                        <div class="innerRes">
+                                            <a href="javascript:;" class="resAuthor">作者</a>
+                                            <div class="resContent">内容</div>
+                                            <div class="resButtons"><a href="javascript:;" class="deleteRes">删除</a><a href="javascript:;"><i class="iconfont">&#xe9b0;</i> 回复</a></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="deside-area">
+                    <div class="userBox">
+                        <div class="userTit">关于作者</div>
+                        <a href="javascript:;" class="userItem">
+                            <div class="Head"><img src=""></div>
+                            <div class="Name">123</div>
+                        </a>
+                        <div class="thumbUp">获得点赞&nbsp;&nbsp;<span>0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
